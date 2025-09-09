@@ -1,0 +1,22 @@
+
+{
+  "short_name": "ViaCripto",
+  "name": "ViaCripto Currency Converter",
+  "description": "A currency converter application powered by the Gemini API, providing real-time exchange rates with a clean and modern user interface, inspired by Wise.",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#f1f5f9",
+  "background_color": "#f1f5f9"
+}
