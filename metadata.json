@@ -1,5 +1,5 @@
 {
   "name": "ViaCripto",
-  "description": "A currency converter application powered by the Gemini API, providing real-time exchange rates with a clean and modern user interface, inspired by Wise.",
+  "description": "Um aplicativo conversor de moedas que fornece taxas de câmbio em tempo real com uma interface de usuário limpa e moderna, inspirado no Wise.",
   "requestFramePermissions": []
 }

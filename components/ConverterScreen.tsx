@@ -15,7 +15,7 @@ const ConverterScreen: React.FC = () => {
             <CurrencyConverter />
         </div>
         <footer className="text-center mt-8 text-slate-400 dark:text-slate-500 text-sm">
-            <p>Desenvolvido com React e TypeScript</p>
+            <p>&copy; {new Date().getFullYear()} ViaCripto &bull; Desenvolvido com React e TypeScript</p>
         </footer>
     </div>
   );
