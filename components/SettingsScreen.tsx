@@ -36,19 +36,11 @@ const SettingsScreen: React.FC<SettingsScreenProps> = ({ currentTheme, setTheme 
               </button>
             </div>
           </div>
-          
-          {/* Placeholder: Tutorials */}
-          <div className="opacity-50">
-            <h2 className="text-lg font-semibold mb-3">Tutoriais</h2>
-            <div className="bg-white dark:bg-slate-800 p-4 rounded-lg text-center">
-                <p className="text-slate-500 dark:text-slate-400">Como transferir via Crypto (Em breve)</p>
-            </div>
-          </div>
 
           {/* Placeholder: About */}
           <div className="opacity-50">
             <h2 className="text-lg font-semibold mb-3">Sobre</h2>
-             <div className="bg-white dark:bg-slate-800 p-4 rounded-lg text-center">
+            <div className="bg-white dark:bg-slate-800 p-4 rounded-lg text-center">
                 <p className="text-slate-500 dark:text-slate-400">Informações do desenvolvedor (Em breve)</p>
             </div>
           </div>
