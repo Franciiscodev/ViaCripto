@@ -145,7 +145,7 @@ const CurrencyConverter: React.FC = () => {
 
   return (
     <div className="w-full">
-      <div className="bg-white shadow-lg rounded-2xl p-4 sm:p-6 space-y-4 relative">
+      <div className="bg-binance-gray border border-binance-light-gray rounded-xl p-4 sm:p-6 space-y-4 relative">
         <CurrencyInput
           label="Você envia"
           amount={amount}
@@ -157,7 +157,7 @@ const CurrencyConverter: React.FC = () => {
         <div className="flex items-center justify-center -my-2">
           <button
             onClick={handleSwapCurrencies}
-            className="bg-white border-4 border-slate-100 rounded-full p-2 text-slate-500 hover:text-blue-600 hover:rotate-180 transition-transform duration-300 z-10"
+            className="bg-binance-dark border-4 border-binance-dark rounded-full p-2 text-binance-text-secondary hover:text-binance-yellow hover:rotate-180 transition-transform duration-300 z-10"
             aria-label="Trocar moedas"
           >
             <SwapIcon />
@@ -173,8 +173,8 @@ const CurrencyConverter: React.FC = () => {
           isReadOnly={true}
         />
         
-        <div className="pt-4 text-center text-slate-600">
-          {isLoading && <p className="animate-pulse">Obtendo a taxa de câmbio...</p>}
+        <div className="pt-4 text-center text-binance-text-secondary">
+          {isLoading && <p className="animate-pulse text-binance-yellow">Obtendo a taxa de câmbio...</p>}
           {error && <p className="text-red-500">{error}</p>}
           {!isLoading && !error && exchangeRate !== null && (
             <p className="font-semibold text-lg">

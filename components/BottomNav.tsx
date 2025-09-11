@@ -17,8 +17,8 @@ const NavButton: React.FC<{
   isActive: boolean;
   onClick: () => void;
 }> = ({ label, icon, isActive, onClick }) => {
-  const activeClasses = 'text-blue-600 dark:text-blue-400';
-  const inactiveClasses = 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200';
+  const activeClasses = 'text-binance-yellow';
+  const inactiveClasses = 'text-binance-text-secondary hover:text-binance-text';
 
   return (
     <button
@@ -34,7 +34,7 @@ const NavButton: React.FC<{
 
 const BottomNav: React.FC<BottomNavProps> = ({ activeScreen, setActiveScreen }) => {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 h-16 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700 shadow-t-lg z-50">
+    <nav className="fixed bottom-0 left-0 right-0 h-16 bg-binance-gray/90 backdrop-blur-sm border-t border-binance-light-gray shadow-t-lg z-50">
       <div className="flex justify-around items-center h-full max-w-md mx-auto">
         <NavButton
           label="Dashboard"

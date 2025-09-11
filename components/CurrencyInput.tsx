@@ -29,8 +29,8 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
   };
   
   return (
-    <div className="bg-white p-4 rounded-xl border border-slate-200 w-full">
-      <label className="text-sm text-slate-500 block mb-2">{label}</label>
+    <div className="bg-binance-dark p-4 rounded-xl border border-binance-light-gray w-full">
+      <label className="text-sm text-binance-text-secondary block mb-2">{label}</label>
       <div className="flex items-center space-x-4">
         <input
           type="text" // Using text for better control over value and to avoid number input spinners
@@ -39,18 +39,18 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
           value={amount}
           onChange={handleAmountChange}
           readOnly={isReadOnly}
-          className={`w-full text-2xl sm:text-3xl font-bold text-slate-800 bg-transparent focus:outline-none ${isReadOnly ? 'cursor-default' : ''}`}
+          className={`w-full text-2xl sm:text-3xl font-bold text-binance-text bg-transparent focus:outline-none ${isReadOnly ? 'cursor-default' : ''}`}
           placeholder="0"
           autoComplete="off"
         />
-        <div className="h-8 w-px bg-slate-200"></div>
+        <div className="h-8 w-px bg-binance-light-gray"></div>
         <select
           value={currency}
           onChange={(e) => onCurrencyChange(e.target.value)}
-          className="bg-transparent text-lg sm:text-xl font-semibold text-slate-800 focus:outline-none cursor-pointer"
+          className="bg-transparent text-lg sm:text-xl font-semibold text-binance-text focus:outline-none cursor-pointer"
         >
           {CURRENCIES.map((c: Currency) => (
-            <option key={c.code} value={c.code}>
+            <option key={c.code} value={c.code} className="bg-binance-dark text-binance-text">
               {c.code}
             </option>
           ))}

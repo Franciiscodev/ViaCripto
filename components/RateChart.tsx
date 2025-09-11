@@ -9,7 +9,7 @@ interface RateChartProps {
 }
 
 const ChartSkeleton: React.FC = () => (
-    <div className="w-full h-[180px] bg-slate-200 dark:bg-slate-800 rounded-lg animate-pulse"></div>
+    <div className="w-full h-[180px] bg-binance-light-gray rounded-lg animate-pulse"></div>
 );
 
 const RateChart: React.FC<RateChartProps> = ({ from, to }) => {
@@ -40,7 +40,7 @@ const RateChart: React.FC<RateChartProps> = ({ from, to }) => {
       .sort(([dateA], [dateB]) => new Date(dateA).getTime() - new Date(dateB).getTime())
       .map(([date, currencyData]) => ({ date, rate: currencyData[to] }));
 
-    if (rates.length < 2) return <p className="text-center text-slate-500">Dados insuficientes para o gráfico.</p>;
+    if (rates.length < 2) return <p className="text-center text-binance-text-secondary">Dados insuficientes para o gráfico.</p>;
 
     const rateValues = rates.map(r => r.rate);
     const minRate = Math.min(...rateValues);
@@ -69,27 +69,27 @@ const RateChart: React.FC<RateChartProps> = ({ from, to }) => {
         <div>
             <div className="flex justify-between items-baseline mb-2">
                 <div>
-                    <p className="font-bold text-lg text-slate-800 dark:text-slate-100">{from} / {to}</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Últimos 30 dias</p>
+                    <p className="font-bold text-lg text-binance-text">{from} / {to}</p>
+                    <p className="text-sm text-binance-text-secondary">Últimos 30 dias</p>
                 </div>
                 <div className="text-right">
-                    <p className="font-semibold text-slate-700 dark:text-slate-200">{lastRate.toFixed(4)}</p>
+                    <p className="font-semibold text-binance-text">{lastRate.toFixed(4)}</p>
                     <p className={`text-sm font-bold ${isPositive ? 'text-green-500' : 'text-red-500'}`}>
                         {isPositive ? '+' : ''}{change.toFixed(4)} ({percentChange.toFixed(2)}%)
                     </p>
                 </div>
             </div>
             <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full h-auto">
-                <path d={pathData} fill="none" stroke="#3b82f6" strokeWidth="2" />
+                <path d={pathData} fill="none" stroke="#F0B90B" strokeWidth="2" />
                 <defs>
                     <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style={{ stopColor: 'rgba(59, 130, 246, 0.2)' }} />
-                        <stop offset="100%" style={{ stopColor: 'rgba(59, 130, 246, 0)' }} />
+                        <stop offset="0%" style={{ stopColor: 'rgba(240, 185, 11, 0.2)' }} />
+                        <stop offset="100%" style={{ stopColor: 'rgba(240, 185, 11, 0)' }} />
                     </linearGradient>
                 </defs>
                 <path d={`${pathData} L ${getX(rates.length - 1)} ${svgHeight} L ${getX(0)} ${svgHeight} Z`} fill="url(#gradient)" />
             </svg>
-            <div className="flex justify-between text-xs text-slate-400 dark:text-slate-500 mt-1">
+            <div className="flex justify-between text-xs text-binance-text-secondary mt-1">
                 <span>{rates[0].date}</span>
                 <span>{rates[rates.length-1].date}</span>
             </div>
@@ -98,7 +98,7 @@ const RateChart: React.FC<RateChartProps> = ({ from, to }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+    <div className="bg-binance-gray p-4 rounded-xl border border-binance-light-gray">
       {loading && <ChartSkeleton />}
       {error && <p className="text-red-500 text-center">{error}</p>}
       {!loading && !error && data && renderChart()}

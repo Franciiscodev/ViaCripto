@@ -10,7 +10,7 @@ export type Theme = 'light' | 'dark';
 
 const App: React.FC = () => {
   const [activeScreen, setActiveScreen] = useState<Screen>('dashboard');
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('dark');
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -33,7 +33,7 @@ const App: React.FC = () => {
 
   return (
     <div className="font-sans">
-      <main className="bg-slate-100 dark:bg-slate-900 min-h-screen w-full pb-24">
+      <main className="bg-binance-dark text-binance-text min-h-screen w-full pb-24">
         {renderScreen()}
       </main>
       <BottomNav activeScreen={activeScreen} setActiveScreen={setActiveScreen} />

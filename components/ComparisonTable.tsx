@@ -29,7 +29,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({
 
   if (error) {
     return (
-      <div className="mt-8 text-center p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
+      <div className="mt-8 text-center p-4 bg-red-500/10 border border-red-500/20 text-red-400 rounded-lg">
         <p><strong>Oops!</strong> {error}</p>
       </div>
     );
@@ -37,7 +37,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({
 
   if (providers.length === 0 && sendAmount > 0) {
     return (
-        <div className="mt-8 text-center p-4 bg-slate-50 border border-slate-200 text-slate-500 rounded-lg">
+        <div className="mt-8 text-center p-4 bg-binance-gray border border-binance-light-gray text-binance-text-secondary rounded-lg">
             <p>Nenhuma provedora encontrada para esta combinação.</p>
         </div>
     );
@@ -67,7 +67,7 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({
 
   return (
     <div className="mt-8">
-      <h2 className="text-lg sm:text-xl font-bold text-slate-700 mb-4">Compare o custo</h2>
+      <h2 className="text-lg sm:text-xl font-bold text-binance-text mb-4">Compare o custo</h2>
       <div className="space-y-3">
         {providersWithCalculations.map((provider, index) => {
           const { receivedAmount, fee, rate } = provider.calculatedQuote;
@@ -79,18 +79,18 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({
             <div
               key={provider.id}
               onClick={() => setSelectedProvider(provider)}
-              className={`p-4 border rounded-lg bg-white hover:bg-slate-50 hover:shadow-md cursor-pointer transition-all relative ${isBest ? 'border-blue-500 border-2' : 'border-slate-200'}`}
+              className={`p-4 border rounded-lg bg-binance-gray hover:bg-binance-light-gray/60 hover:shadow-md cursor-pointer transition-all relative ${isBest ? 'border-binance-yellow border-2' : 'border-binance-light-gray'}`}
             >
-              {isBest && <div className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-full inline-block mb-2">MELHOR VALOR</div>}
+              {isBest && <div className="text-xs font-bold text-binance-yellow bg-binance-yellow/10 px-2 py-1 rounded-full inline-block mb-2">MELHOR VALOR</div>}
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center space-x-4 sm:space-x-6">
                    <ProviderIcon providerName={provider.name} logoUrl={provider.logoUrl} className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-contain" />
                   <div>
-                    {quote?.estimatedDelivery && <p className="text-xs sm:text-sm text-slate-500">{quote.estimatedDelivery}</p>}
+                    {quote?.estimatedDelivery && <p className="text-xs sm:text-sm text-binance-text-secondary">{quote.estimatedDelivery}</p>}
                   </div>
                 </div>
                 <div className="text-right flex-shrink-0">
-                  <p className="font-bold text-base sm:text-lg text-green-600">
+                  <p className="font-bold text-base sm:text-lg text-green-500">
                     {receivedAmount.toLocaleString('pt-BR', { style: 'currency', currency: targetCurrency })}
                   </p>
                   {!isBest && missedOutAmount > 0.01 && (
@@ -100,8 +100,8 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({
                   )}
                 </div>
               </div>
-              <div className="mt-3 pt-3 border-t border-slate-100">
-                <p className="text-xs sm:text-sm text-slate-500 text-center">
+              <div className="mt-3 pt-3 border-t border-binance-light-gray/50">
+                <p className="text-xs sm:text-sm text-binance-text-secondary text-center">
                   Tarifa: {fee.toLocaleString('pt-BR', { style: 'currency', currency: sourceCurrency })} • Câmbio: {rate.toFixed(4)}
                 </p>
               </div>

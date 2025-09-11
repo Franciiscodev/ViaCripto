@@ -37,18 +37,18 @@ const ProviderDetailsModal: React.FC<ProviderDetailsModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4"
       onClick={onClose}
       aria-modal="true"
       role="dialog"
     >
       <div 
-        className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 relative"
+        className="bg-binance-gray rounded-2xl shadow-xl w-full max-w-md p-6 relative border border-binance-light-gray"
         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors"
+          className="absolute top-4 right-4 text-binance-text-secondary hover:text-binance-text transition-colors"
           aria-label="Fechar"
         >
           <CloseIcon />
@@ -57,42 +57,42 @@ const ProviderDetailsModal: React.FC<ProviderDetailsModalProps> = ({
         <div className="flex items-center space-x-3 sm:space-x-4 mb-6">
           <ProviderIcon providerName={provider.name} logoUrl={provider.logoUrl} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-contain" />
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-800">{provider.name}</h2>
-            <p className="text-sm text-slate-500">Detalhes da transferência</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-binance-text">{provider.name}</h2>
+            <p className="text-sm text-binance-text-secondary">Detalhes da transferência</p>
           </div>
         </div>
 
-        <div className="space-y-3 text-slate-700">
-          <div className="flex justify-between items-center bg-slate-50 p-3 rounded-lg">
-            <span className="font-medium">Você envia</span>
+        <div className="space-y-3 text-binance-text">
+          <div className="flex justify-between items-center bg-binance-dark p-3 rounded-lg">
+            <span className="font-medium text-binance-text-secondary">Você envia</span>
             <span className="font-bold">{formatCurrency(sendAmount, sourceCurrency)}</span>
           </div>
           <div className="flex justify-between items-center p-3">
-            <span className="font-medium">Taxa de serviço</span>
-            <span className="font-bold text-red-600">- {formatCurrency(fee, sourceCurrency)}</span>
+            <span className="font-medium text-binance-text-secondary">Taxa de serviço</span>
+            <span className="font-bold text-red-500">- {formatCurrency(fee, sourceCurrency)}</span>
           </div>
-           <div className="flex justify-between items-center bg-slate-50 p-3 rounded-lg">
-            <span className="font-medium">Valor a converter</span>
+           <div className="flex justify-between items-center bg-binance-dark p-3 rounded-lg">
+            <span className="font-medium text-binance-text-secondary">Valor a converter</span>
             <span className="font-bold">{formatCurrency(amountToConvert, sourceCurrency)}</span>
           </div>
           <div className="flex justify-between items-center p-3">
-            <span className="font-medium">Taxa de câmbio</span>
+            <span className="font-medium text-binance-text-secondary">Taxa de câmbio</span>
             <span className="font-bold">{(rate ?? 0).toFixed(5)}</span>
           </div>
-          <div className="flex justify-between items-center p-3 border-t border-slate-200 mt-2 pt-4">
+          <div className="flex justify-between items-center p-3 border-t border-binance-light-gray mt-2 pt-4">
             <span className="font-medium text-lg">Eles recebem</span>
-            <span className="font-bold text-lg text-green-600">{formatCurrency(receivedAmount, targetCurrency)}</span>
+            <span className="font-bold text-lg text-green-500">{formatCurrency(receivedAmount, targetCurrency)}</span>
           </div>
         </div>
         
         {quote?.estimatedDelivery && (
-          <div className="mt-6 text-center text-sm text-slate-500">
-              <p>Estimativa de entrega: <span className="font-medium">{quote.estimatedDelivery}</span></p>
+          <div className="mt-6 text-center text-sm text-binance-text-secondary">
+              <p>Estimativa de entrega: <span className="font-medium text-binance-text">{quote.estimatedDelivery}</span></p>
           </div>
         )}
 
         <div className="mt-8">
-            <button className="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors">
+            <button className="w-full bg-binance-yellow text-black font-bold py-3 px-4 rounded-lg hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-binance-yellow focus:ring-opacity-50 transition-colors">
                 Enviar Dinheiro
             </button>
         </div>
